@@ -1,0 +1,587 @@
+/* Start by defining some nice colors. As variables, so that I don't
+   have to remember them + can easily change them later. */
+:root {
+    /* uchu by netoperator wibby */
+    /*** gray ***/
+    --uchu-light-gray-raw: 95.57% 0.003 286.35;
+    --uchu-light-gray: oklch(var(--uchu-light-gray-raw));
+
+    --uchu-gray-raw: 84.68% 0.002 197.12;
+    --uchu-gray: oklch(var(--uchu-gray-raw));
+
+    --uchu-dark-gray-raw: 63.12% 0.004 219.55;
+    --uchu-dark-gray: oklch(var(--uchu-dark-gray-raw));
+
+    /*** red ***/
+    --uchu-light-red-raw: 88.98% 0.052 3.28;
+    --uchu-light-red: oklch(var(--uchu-light-red-raw));
+
+    --uchu-red-raw: 62.73% 0.209 12.37;
+    --uchu-red: oklch(var(--uchu-red-raw));
+
+    --uchu-dark-red-raw: 45.8% 0.177 17.7;
+    --uchu-dark-red: oklch(var(--uchu-dark-red-raw));
+
+    /*** pink ***/
+    --uchu-light-pink-raw: 95.8% 0.023 354.27;
+    --uchu-light-pink: oklch(var(--uchu-light-pink-raw));
+
+    --uchu-pink-raw: 85.43% 0.09 354.1;
+    --uchu-pink: oklch(var(--uchu-pink-raw));
+
+    --uchu-dark-pink-raw: 64.11% 0.084 353.91;
+    --uchu-dark-pink: oklch(var(--uchu-dark-pink-raw));
+
+    /*** purple ***/
+    --uchu-light-purple-raw: 89.1% 0.046 305.24;
+    --uchu-light-purple: oklch(var(--uchu-light-purple-raw));
+
+    --uchu-purple-raw: 58.47% 0.181 302.06;
+    --uchu-purple: oklch(var(--uchu-purple-raw));
+
+    --uchu-dark-purple-raw: 39.46% 0.164 298.29;
+    --uchu-dark-purple: oklch(var(--uchu-dark-purple-raw));
+
+    /*** blue ***/
+    --uchu-light-blue-raw: 89.66% 0.046 260.67;
+    --uchu-light-blue: oklch(var(--uchu-light-blue-raw));
+
+    --uchu-blue-raw: 62.39% 0.181 258.33;
+    --uchu-blue: oklch(var(--uchu-blue-raw));
+
+    --uchu-dark-blue-raw: 43.48% 0.17 260.2;
+    --uchu-dark-blue: oklch(var(--uchu-dark-blue-raw));
+
+    /*** green ***/
+    --uchu-light-green-raw: 93.96% 0.05 148.74;
+    --uchu-light-green: oklch(var(--uchu-light-green-raw));
+
+    --uchu-green-raw: 79.33% 0.179 145.62;
+    --uchu-green: oklch(var(--uchu-green-raw));
+
+    --uchu-dark-green-raw: 58.83% 0.158 145.05;
+    --uchu-dark-green: oklch(var(--uchu-dark-green-raw));
+
+    /*** yellow ***/
+    --uchu-light-yellow-raw: 97.05% 0.039 91.2;
+    --uchu-light-yellow: oklch(var(--uchu-light-yellow-raw));
+
+    --uchu-yellow-raw: 90.92% 0.125 92.56;
+    --uchu-yellow: oklch(var(--uchu-yellow-raw));
+
+    --uchu-dark-yellow-raw: 69.14% 0.109 91.04;
+    --uchu-dark-yellow: oklch(var(--uchu-dark-yellow-raw));
+
+    /*** orange ***/
+    --uchu-light-orange-raw: 93.83% 0.037 56.93;
+    --uchu-light-orange: oklch(var(--uchu-light-orange-raw));
+
+    --uchu-orange-raw: 78.75% 0.14163582809066333 54.32911089172009;
+    --uchu-orange: oklch(var(--uchu-orange-raw));
+
+    --uchu-dark-orange-raw: 58.28% 0.128 52.2;
+    --uchu-dark-orange: oklch(var(--uchu-dark-orange-raw));
+
+    /*** general ***/
+    --uchu-yang-raw: 99.4% 0 0;
+    --uchu-yang: oklch(var(--uchu-yang-raw));
+
+    --uchu-light-yin-raw: 91.87% 0.003 264.54;
+    --uchu-light-yin: oklch(var(--uchu-light-yin-raw));
+
+    --uchu-yin-raw: 14.38% 0.007 256.88;
+    --uchu-yin: oklch(var(--uchu-yin-raw));
+
+    /* Now that we have our cute colors, it's dead easy to use them. */
+    --dark-bg: var(--uchu-yin);
+    --dark-fg: var(--uchu-light-yin);
+    --dark-alt-bg: #222;
+
+    --light-bg: var(--uchu-yang);
+    --light-fg: var(--uchu-yin);
+    --light-alt-bg: #eee;
+
+    --accent-color: var(--uchu-red);
+    --accent-color-light: var(--uchu-light-red);
+    --accent-color-dark: var(--uchu-dark-red);
+
+    /* breakpoints */
+    --navbar-breakpoint: 1200px;
+}
+
+html {
+    /* Font size - a little bigger than default */
+    font-size: 18px;
+
+    /* Base colors */
+    background-color: var(--dark-bg);
+    color: var(--dark-fg);
+
+    @media (prefers-color-scheme: light) {
+        background-color: var(--light-bg);
+        color: var(--light-fg);
+    }
+}
+
+/* Body text */
+body {
+    font-family: serif;
+
+    /* Let the text breath */
+    line-height:1.6;
+}
+
+/* Make sure images don't overflow the documents */
+img {
+    max-width: 100%;
+}
+
+/* Styling for code blocks etc. */
+pre, code, .pill {
+    /* Anything but Courier New, please */
+    font-family: 'Go Mono', 'Source Code Pro', 'Droid Mono', 'Courier Prime', monospace;
+}
+
+pre {
+    font-size: 11pt;
+
+    background-color: var(--dark-alt-bg);
+    @media (prefers-color-scheme: light) {
+        background-color: var(--light-alt-bg);
+    }
+}
+
+.arguments {
+    margin-left: 2em;
+}
+
+pre.code-definition {
+    overflow-x: auto;
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 250px;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 0, 0, 1em, 0;
+}
+
+.previewed-code {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-block-end: 24px;
+
+    pre {
+        overflow-x: auto;
+        flex-basis: 0;
+        flex-grow: 1;
+        min-width: 250px;
+        border-radius: 6px;
+        padding: 16px;
+        margin: 0;
+    }
+
+    pre.big {
+        box-sizing: border-box;
+        min-width: 100%;
+    }
+}
+
+.previewed-code > * {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 250px;
+}
+
+.preview {
+    background: var(--dark-alt-bg);
+    @media (prefers-color-scheme: light) {
+        background: var(--light-alt-bg);
+    }
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    gap: 16px;
+}
+
+.preview > * {
+    background-color: var(--dark-bg);
+    @media (prefers-color-scheme: light) {
+        background-color: var(--light-bg);
+    }
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* Links: Bold, accent color; with hover */
+a, a:visited {    
+    color: var(--accent-color-light);
+    @media (prefers-color-scheme: light) {
+        color: var(--accent-color-dark);
+    }
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Headings: use sans-serif font with more space to breath */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+
+h1 {
+    /* The title doesn't need a huge margin; breadcrumbs should be almost flush above it. */
+    margin-top: 0px;
+    text-align: center;
+    font-size: 2.35em;
+}
+
+h2 {font-size: 2em;}
+
+h3 {font-size: 1.75em;}
+
+h4 {font-size: 1.5em;}
+
+h5 {font-size: 1.25em;}
+
+h6 {font-size: 1em;}
+
+/* Blockquotes: be distinct from body text */
+blockquote {
+    margin: 0px;
+    padding: 0.8em 0.8em 0.8em 1em;
+    border-left: 5px solid var(--accent-color);
+    background-color: var(--dark-alt-bg);
+    @media (prefers-color-scheme: light) {
+        background-color: var(--light-alt-bg);
+    }
+}
+
+/* The main content area + space allocated for navigation */
+#main-grid {
+    display: grid;
+    grid-template-columns: minmax(auto, 220px) minmax(auto,800px) minmax(auto,160px);
+    gap: 36px;
+    justify-content: center;
+    /* Mobile size - hide navs */
+    @media (max-width: 1000px) {
+        grid-template-columns: auto;
+    }
+}
+
+main {
+    @media (max-width: 1000px) {
+        max-width: 800px;
+    }
+}
+
+/* Navbar */
+nav {
+    overflow-y: scroll;
+    height: calc(100vh - 100px);
+    font-family: sans-serif;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1rem;
+
+    padding: 1em;
+
+    position: sticky;
+    top: 60px;
+
+    background-color: var(--dark-alt-bg);
+    @media (prefers-color-scheme: light) {
+        background-color: var(--light-alt-bg);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Mobile size - hide navs */
+    @media (max-width: 1000px) {
+        display: none;
+    }
+}
+
+#page-outline {
+    display: block;
+
+    strong {
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    ul {
+        list-style: none;
+        padding-inline-start: 16px;
+    }
+
+    > ul {
+        padding-inline-start: 0px;
+    }
+
+    /* Mobile size - hide navs */
+    @media (max-width: 1000px) {
+        display: none;
+    }
+}
+
+.nav-nested {
+    padding-left: 1rem;
+}
+
+.nav-part-heading {
+    margin-top: 1rem;
+    opacity: 0.4;
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+
+/* Footer - distinct from the body */
+footer {
+    gap: 0.2em;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 0.7em;
+    margin-top: 5em;
+    padding: 1em 0.8em;
+    border-top: 5px solid var(--dark-alt-bg);
+    @media (prefers-color-scheme: light) {
+        border-color: var(--light-alt-bg);
+    }
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    margin-top: 3rem;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 4px;
+    text-decoration: none;
+    align-items: center;
+}
+
+/* justify paragraphs */
+p {
+    hypens: auto;
+    text-align: justify;
+    text-justify: inter-word;
+    text-wrap: pretty;
+}
+
+/* Tables - basic but readable */
+table {
+    margin: 2em 0px;
+    width: 100%;
+}
+
+th {
+    text-decoration: underline;
+}
+
+td, th {
+    padding: 0px 10px;
+}
+
+/* Param containers */
+.param-container {
+    display: inline-flex;
+    gap: 1em;
+    margin-left: 1em;
+    align-items: center;
+}
+
+.param-predicate {
+    font-size: 0.6em;
+    font-style: italic;
+    opacity: 0.3;
+}
+
+.arguments a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Pills - used for type names */
+.pill {
+    color: black;
+    display:inline-block;
+    padding:2px 4px;
+    border-radius:4px;
+    white-space:nowrap
+}
+a.pill, .pill a {
+    color:black!important;
+    text-decoration:none!important
+}
+.pill+.pill {
+    margin-inline-start:4px
+}
+.pill-con {
+    background:#a6ebe6;
+}
+.pill-str {
+    background:#d1ffe2;
+}
+.pill-kw {
+    background:#ffcbc4;
+    background:color(display-p3 1 .83 .8)
+}
+.pill-num {
+    background:#ffedc1;
+    background:color(display-p3 1 .93 .77)
+}
+.pill-obj {
+    background:#eff0f3
+}
+.pill-collect {
+    background:#f9dfff;
+    background:color(display-p3 .97 .88 1)
+}
+.pill-fn {
+    background:#d1d4fd;
+}
+.pill-meta {
+    background:#c6d6ec;
+}
+.pill-layout {
+    background:#a6eaff;
+}
+.pill-date:before {
+    content:"";
+    display:block;
+    background-image:conic-gradient(from 30deg,#020513,#041529 7%,#a07aaa 18%,#a6aff6 28%,#89c8e5 35%,#b7daec 66%,#dcac68 73%,#47232d 79%,#041529 89%,#020513);
+    width:max(60em,50vmax);
+    height:max(60em,50vmax);
+    left:calc(max(60em,50vmax)*-.4);
+    top:calc(max(60em,50vmax)*-.4);
+    margin:auto;
+    position:absolute;
+    animation:120s infinite linear day-bg;
+    z-index:-1;
+    opacity:.25;
+}
+.pill-date {
+    position:relative;
+    overflow:hidden;
+    vertical-align:text-bottom;
+    z-index:0;
+}
+.pill-tiling {
+    background:repeating-linear-gradient(45deg,transparent,transparent .4em,#c6feff 0,#c6feff .8em);
+    background-color:#ffd2ec;
+    background:repeating-linear-gradient(45deg,transparent,transparent .4em,color(display-p3 .82 .99 1) 0,color(display-p3 .82 .99 1) .8em);
+    background-color:color(display-p3 1 .83 .92);
+}
+@keyframes day-bg {
+    0% {
+        rotate:40deg
+    }
+    to {
+        rotate:400deg
+    }
+}
+.pill-col {
+    background:#7cd5ff;
+    background:linear-gradient(83deg,#7cd5ff,#a6fbca,#fff37c 66%,#ffa49d)
+}
+h1.pill {
+    font-size:34px;
+    border-radius:12px;
+    padding:4px 12px
+}
+
+/* Syntax highlighting for Typst code */
+.typ-comment {
+    color: RosyBrown;
+
+    @media (prefers-color-scheme: light) {
+        color: #8a8a8a;
+    }
+}
+.typ-escape, .typ-label, .typ-ref, .typ-math-op {
+    color: var(--uchu-orange);
+
+    @media (prefers-color-scheme: light) {
+        color:#1d6c76;
+    }
+}
+.typ-raw {
+    color: var(--uchu-light-yin);
+
+    @media (prefers-color-scheme: light) {
+        color:#818181;
+    }
+}
+.typ-marker, .typ-pol {
+    color: var(--uchu-purple);
+
+    @media (prefers-color-scheme: light) {
+        color:#8b41b1;
+    }
+}
+.typ-func {
+    color: var(--uchu-blue);
+
+    @media (prefers-color-scheme: light) {
+        color:#4b69c6;
+    }
+}
+.typ-math-delim, .typ-str {
+    color: var(--uchu-green);
+
+    @media (prefers-color-scheme: light) {
+        color:#298e0d;
+    }
+}
+.typ-key {
+    color: var(--uchu-red);
+
+    @media (prefers-color-scheme: light) {
+        color:#d73a49;
+    }
+}
+.typ-num {
+    color: var(--uchu-pink);
+
+    @media (prefers-color-scheme: light) {
+        color:#b60157;
+    }
+}
+.typ-strong {
+    font-weight:700;
+}
+.typ-emph {
+    font-style:italic;
+}
+.typ-link {
+    text-decoration:underline;
+}
+.typ-heading {
+  font-weight:700;
+  text-decoration:underline;
+}
+.typ-term {
+    font-weight:700;
+}
