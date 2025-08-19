@@ -254,8 +254,9 @@ function outputFunc(fn, content, id, headerLevel, paramLevel, overrideTitle = nu
 
     content.params.forEach((param) => {
         const hy = `h${paramLevel}`
-        fs.appendFileSync(fn, `<${hy} id="${id}-${param.name}">${param.name}`);
+        fs.appendFileSync(fn, `<${hy} id="${id}-${param.name}">`);
         fs.appendFileSync(fn, `<span class="param-container">`);
+        fs.appendFileSync(fn, `<span class="param-title">${param.name}</span>`);
         param.types.forEach((ty) => {
             outputTypeData(fn, ty, 'span', true);
         })

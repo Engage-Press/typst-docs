@@ -408,9 +408,8 @@ td, th {
 .param-container {
     display: inline-flex;
     gap: 1em;
-    margin-left: 1em;
     align-items: center;
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .param-predicate {
