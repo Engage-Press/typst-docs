@@ -42,7 +42,7 @@ fi
 
 (
     cd output || exit 1
-    "$typst_docs" > docs.json || exit 1
+    "$typst_docs" --out-file docs.json || exit 1
 ) || fatal "Build failed"
 
 if [ -f "output/docs.json" ]
