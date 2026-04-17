@@ -24,6 +24,7 @@ fi
         git clone "ssh://git@github.com/typst/typst" "${EP_TYPST_DIR}"
     fi
     cd "${EP_TYPST_DIR}/docs"
+    git fetch
     git checkout "$typst_hash"
     CARGO_NET_GIT_FETCH_WITH_CLI=true cargo build
 )
